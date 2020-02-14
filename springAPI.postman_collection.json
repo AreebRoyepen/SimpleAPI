@@ -11,6 +11,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU4MTA4NDQ1OCwiaWF0IjoxNTgxMDY2NDU4fQ.DyfylMypPx9XJ6RVu5BqBphhg2ybXVdm1IesX0v2_-B7lDiJZYooqWkw-XovvoV4uDKmJX1v7GJ7kKA7zRuDmw",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -53,10 +63,20 @@
 		{
 			"name": "/personbyid",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU4MTA4NDQ1OCwiaWF0IjoxNTgxMDY2NDU4fQ.DyfylMypPx9XJ6RVu5BqBphhg2ybXVdm1IesX0v2_-B7lDiJZYooqWkw-XovvoV4uDKmJX1v7GJ7kKA7zRuDmw",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/person/1",
+					"raw": "http://localhost:8080/person/4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -64,7 +84,7 @@
 					"port": "8080",
 					"path": [
 						"person",
-						"1"
+						"4"
 					]
 				}
 			},
@@ -73,6 +93,16 @@
 		{
 			"name": "/allperson",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU4MTA4NDQ1OCwiaWF0IjoxNTgxMDY2NDU4fQ.DyfylMypPx9XJ6RVu5BqBphhg2ybXVdm1IesX0v2_-B7lDiJZYooqWkw-XovvoV4uDKmJX1v7GJ7kKA7zRuDmw",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -92,6 +122,16 @@
 		{
 			"name": "/addperson",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU4MTA4NDQ1OCwiaWF0IjoxNTgxMDY2NDU4fQ.DyfylMypPx9XJ6RVu5BqBphhg2ybXVdm1IesX0v2_-B7lDiJZYooqWkw-XovvoV4uDKmJX1v7GJ7kKA7zRuDmw",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -99,22 +139,22 @@
 					"formdata": [
 						{
 							"key": "name",
-							"value": "Rifaat",
+							"value": "Sidrah",
 							"type": "text"
 						},
 						{
 							"key": "surname",
-							"value": "Royepen",
+							"value": "B",
 							"type": "text"
 						},
 						{
 							"key": "gender",
-							"value": "M",
+							"value": "F",
 							"type": "text"
 						},
 						{
 							"key": "email",
-							"value": "r@gmail.com",
+							"value": "sb@gmail.com",
 							"type": "text"
 						}
 					]
@@ -136,6 +176,16 @@
 		{
 			"name": "/editperson",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU4MTA4NDQ1OCwiaWF0IjoxNTgxMDY2NDU4fQ.DyfylMypPx9XJ6RVu5BqBphhg2ybXVdm1IesX0v2_-B7lDiJZYooqWkw-XovvoV4uDKmJX1v7GJ7kKA7zRuDmw",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -161,7 +211,7 @@
 						},
 						{
 							"key": "surname",
-							"value": "Royeppen",
+							"value": "Royepen",
 							"type": "text"
 						}
 					]
@@ -187,7 +237,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/person/5",
+					"raw": "http://localhost:8080/person/6",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -195,7 +245,77 @@
 					"port": "8080",
 					"path": [
 						"person",
-						"5"
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\"username\" : \"admin\",\n\"password\" : \"admin\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/authenticate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\"username\" : \"admin\",\n\"password\" : \"admin\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
 					]
 				}
 			},
