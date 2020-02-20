@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.SecureAPI.models.Person;
@@ -41,14 +42,19 @@ public class Controller {
 	  }
 	 
 
-	@PostMapping("/person")
-	public Person addPerson(Person p) {
+	@PostMapping(value = "/person")
+	public Person addPerson(@RequestBody Person p) {
 		return repo.save(p);
 	}
 	
 	@PutMapping("/person/{id}")
-	public Person replaceEmployee(Person p, @PathVariable Long id) {
-
+	public Person replaceEmployee(@RequestBody Person p, @PathVariable Long id) {
+		
+		System.out.println(p.getName());
+		System.out.println(p.getSurname());
+		System.out.println(p.getEmail());
+		System.out.println(p.getGender());
+		
 	    return repo.findById(id)
 	      .map(person -> {
 	    	  if (p.getEmail() != null) person.setEmail(p.getEmail());
